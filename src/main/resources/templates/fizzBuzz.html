@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>FizzBuzz結果</title>
+</head>
+<body>
+    <h1>FizzBuzzの結果</h1>
+    <ul th:each="number : ${numbers}">
+        <li th:text="${number}"></li>
+    </ul>
+</body>
+</html>
