@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>計算機</title>
 </head>
 <body>
+    <h1>計算機</h1>
+    <form th:action="@{/minus}" method="post">
+        <input type="number" name="num1" required>
+        <span> - </span>
+        <input type="number" name="num2" required>
+        <button type="submit">＝</button>
+    </form>
 
+    <div th:if="${result != null}">
+        <p><span th:text="${result}"></span></p>
+    </div>
 </body>
 </html>

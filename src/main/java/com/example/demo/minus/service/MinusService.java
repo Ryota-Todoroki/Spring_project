@@ -1,10 +1,10 @@
 package com.example.demo.minus.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MinusService {
-
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
+    public int subtract(int num1, int num2) {
+        return num1 - num2;
+    }
 }
