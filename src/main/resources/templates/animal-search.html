@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>動物検索画面</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <main>
+        <h1>動物検索画面</h1>
+        <form action="/animalAPI/search" method="get">
+            <select name="animalType">
+				<option value="dog">イヌ</option>
+				<option value="cat">ネコ</option>
+				<option value="lesser panda">レッサーパンダ</option>
+				<option value="lion">ライオン</option>
+				<option value="sea otter">ラッコ</option>
+				<option value="pig">ブタ</option>
+				<option value="test">test</option>
+            </select>
+            <button type="submit">検索</button>
+        </form>
+    </main>
+</body>
+</html>
