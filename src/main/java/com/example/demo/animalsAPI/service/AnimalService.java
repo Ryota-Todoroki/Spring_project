@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.animalsAPI.data.AnimalData;
@@ -18,7 +17,6 @@ public class AnimalService {
 
 	private final AnimalRepository animalRepository;
 
-	@Autowired
 	public AnimalService(AnimalRepository animalRepository) {
 		this.animalRepository = animalRepository;
 	}
@@ -33,10 +31,6 @@ public class AnimalService {
 		List<Animals> filteredAnimals = Arrays.stream(animalsList)
 				.filter(animal -> animal.getName().equalsIgnoreCase(type))
 				.collect(Collectors.toList());
-
-		if (filteredAnimals.isEmpty()) {
-			throw new IllegalArgumentException("該当する動物タイプが見つかりません：" + type);
-		}
 
 		return filteredAnimals;
 	}
@@ -56,7 +50,7 @@ public class AnimalService {
 			animalData.setCry(animal.getCry());
 			return animalData;
 		} else {
-			throw new IllegalArgumentException("該当する動物IDが見つかりません：" + id);
+			return null;
 		}
 	}
 }
